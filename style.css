@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    border-bottom: 2px solid #333;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.header-title {
+    font-size: 32px;
+    color: white;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.header-underline {
+    width: 60px;
+    height: 2px;
+    background-color: white;
+    border: none;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.intro {
+    width: 100%;
+    margin-top: 40px; /* Dodano margines, aby przesunąć boxy w dół */
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 20px;
+    height: 700px; /* Dodano wysokość kontenera */
+}
+.box:first-child {
+    background-color: #111111; /* Lewy box z unikalnym kolorem */
+}
+.box {
+    flex: 1;
+    position: relative; /* Ustawienie względnej pozycji dla tekstów i obrazu */
+    border-radius: 8px;
+    overflow: hidden; /* Zapobiega wychodzeniu elementów poza box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px; /* Wysokość boxa */
+}
+
+.box img {
+    width: 100%; /* Obraz wypełnia szerokość boxa */
+    height: 100%; /* Obraz wypełnia wysokość boxa */
+    object-fit: cover; /* Dopasowanie obrazu bez zniekształceń */
+    position: absolute; /* Obraz znajduje się w tle boxa */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Obraz pod tekstem */
+}
+
+.overlay {
+    position: absolute; /* Nakładka na cały obraz */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło */
+    z-index: 2; /* Nakładka nad obrazem */
+}
+
+.box-text {
+    position: relative; /* Tekst nad obrazem i nakładką */
+    z-index: 3; /* Tekst nad nakładką */
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+}
+
+
+
+.box-text h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #007BFF;
+    text-align: center;
+}
+
+.box-text p {
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+}
+
+.spacer {
+    text-align: center;
+    padding: 40px 0;
+    color: #aaa;
+    font-size: 18px;
+}
+
+.bottom-text p {
+    margin-top: 30px;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    border-top: 2px solid #333;
+    margin-top: 20px;
+}
