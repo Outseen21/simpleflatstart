@@ -57,7 +57,7 @@ body {
 
 .intro {
     width: 100%;
-    margin-top: 40px; /* Dodano margines, aby przesunąć boxy w dół */
+    margin-top: 40px;
 }
 
 .box-container {
@@ -65,81 +65,83 @@ body {
     justify-content: space-around;
     align-items: stretch;
     gap: 20px;
-    height: 700px; /* Dodano wysokość kontenera */
+    height: 700px;
 }
-.box:first-child {
-    background-color: #111111; /* Lewy box z unikalnym kolorem */
-}
+
 .box {
     flex: 1;
-    position: relative; /* Ustawienie względnej pozycji dla tekstów i obrazu */
+    position: relative;
     border-radius: 8px;
-    overflow: hidden; /* Zapobiega wychodzeniu elementów poza box */
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 700px; /* Wysokość boxa */
+    height: 700px;
 }
 
 .box img {
-    width: 100%; /* Obraz wypełnia szerokość boxa */
-    height: 100%; /* Obraz wypełnia wysokość boxa */
-    object-fit: cover; /* Dopasowanie obrazu bez zniekształceń */
-    position: absolute; /* Obraz znajduje się w tle boxa */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1; /* Obraz pod tekstem */
+    z-index: 1;
 }
 
 .overlay {
-    position: absolute; /* Nakładka na cały obraz */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło */
-    z-index: 2; /* Nakładka nad obrazem */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 .box-text {
-    position: relative; /* Tekst nad obrazem i nakładką */
-    z-index: 3; /* Tekst nad nakładką */
+    position: relative;
+    z-index: 3;
     color: white;
     text-align: center;
     font-size: 18px;
     padding: 20px;
 }
 
+/* Style dla urządzeń mobilnych */
+@media (max-width: 768px) {
+    .main-footer {
+        text-align: center; /* Wyśrodkowanie tekstu */
+        padding: 10px;
+        background-color: #000;
+        border-top: 2px solid #333;
+        margin-top: 20px;
+    }
+    
+    .spacer {
+        text-align: center; /* Wyśrodkowanie tekstu w sekcji */
+        padding: 40px 0;
+        color: #aaa;
+        font-size: 18px;
+    }
+    .box-container {
+        flex-direction: column;
+        height: auto; /* Automatyczna wysokość dla zawartości */
+    }
 
+    .box {
+        height: 400px; /* Zmniejszona wysokość boxów */
+    }
 
-.box-text h3 {
-    margin: 10px 0;
-    font-size: 20px;
-    color: #007BFF;
-    text-align: center;
-}
+    .header-title {
+        font-size: 24px; /* Mniejszy rozmiar tytułu */
+    }
 
-.box-text p {
-    font-size: 14px;
-    color: #ccc;
-    text-align: center;
-}
+    .logo img {
+        width: 100px; /* Zmniejszony rozmiar logo */
+    }
 
-.spacer {
-    text-align: center;
-    padding: 40px 0;
-    color: #aaa;
-    font-size: 18px;
-}
-
-.bottom-text p {
-    margin-top: 30px;
-}
-
-.main-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #000;
-    border-top: 2px solid #333;
-    margin-top: 20px;
+    .box-text {
+        font-size: 16px; /* Mniejszy tekst dla lepszej czytelności */
+    }
 }
