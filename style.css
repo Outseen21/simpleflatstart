@@ -31,7 +31,20 @@ body {
     height: auto;
     margin-right: 10px;
 }
+.main-footer {
+    text-align: center; /* Wyśrodkowanie tekstu */
+    padding: 10px;
+    background-color: #000;
+    border-top: 2px solid #333;
+    margin-top: 20px;
+}
 
+.spacer {
+    text-align: center; /* Wyśrodkowanie tekstu w sekcji */
+    padding: 40px 0;
+    color: #aaa;
+    font-size: 18px;
+}
 .header-title {
     font-size: 32px;
     color: white;
