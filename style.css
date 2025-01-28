@@ -79,21 +79,23 @@ body {
 
 .box-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: stretch;
     gap: 20px;
-    height: 700px;
-    width: 100%; /* Kontener zajmuje całą szerokość */
+    height: 800px; /* Zwiększona wysokość kontenera */
+    perspective: 1000px;
 }
 
 .box {
-    flex: 1; /* Każdy box zajmuje równą część */
+    flex: 1 1 30%; /* Każdy box zajmuje równą szerokość */
     position: relative;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: 700px; /* Dopasowanie do wysokości kontenera */
+    width:550px;
     transform-origin: center bottom;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -137,25 +139,33 @@ body {
 }
 
 /* Media queries dla responsywności */
+/* Media queries dla responsywności */
 @media (max-width: 768px) {
     .box-container {
-        flex-direction: column;
-        height: auto;
+        flex-direction: column; /* Boxy ułożone pionowo */
+        height: auto; /* Automatyczna wysokość */
+        width: 100%; /* Dopasowanie do szerokości ekranu */
+        padding: 0; /* Usunięcie marginesów */
+        gap: 20px; /* Dodanie odstępów między boxami */
+        box-sizing: border-box; /* Uwzględnienie paddingu */
     }
 
     .box {
-        height: 300px; /* Dopasowana wysokość na telefonach */
+        height: 300px; /* Wysokość boxów na urządzeniach mobilnych */
+        flex: none; /* Usunięcie reguły flex */
+        width: 100%; /* Boxy zajmują pełną szerokość kontenera */
+        margin-bottom: 20px; /* Odstęp między boxami */
     }
 
     .header-title {
-        font-size: 24px;
+        font-size: 24px; /* Zmniejszenie rozmiaru tytułu */
     }
 
     .logo img {
-        width: 100px;
+        width: 100px; /* Zmniejszenie rozmiaru logo */
     }
 
     .box-text {
-        font-size: 16px;
+        font-size: 16px; /* Mniejszy rozmiar tekstu */
     }
 }
