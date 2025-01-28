@@ -56,11 +56,11 @@ body {
 }
 
 .header-underline {
-    width: 80px; /* Szerokość linii */
-    height: 2px; /* Grubość linii */
-    background-color: white; /* Kolor linii */
+    width: 80px;
+    height: 2px;
+    background-color: white;
     border: none;
-    margin: 5px auto 0; /* Odstęp od napisu */
+    margin: 5px auto 0;
 }
 
 .content {
@@ -79,23 +79,21 @@ body {
 
 .box-container {
     display: flex;
-    justify-content: space-around;
-    align-items: stretch;
+    justify-content: space-between;
     gap: 20px;
-    height: 800px; /* Zwiększona wysokość kontenera */
-    perspective: 1000px;
+    height: 700px;
+    width: 100%; /* Kontener zajmuje całą szerokość */
 }
 
 .box {
-    flex: 1 1 30%; /* Każdy box zajmuje równą szerokość */
+    flex: 1; /* Każdy box zajmuje równą część */
     position: relative;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 700px; /* Dopasowanie do wysokości kontenera */
-    width:550px;
+    height: 100%;
     transform-origin: center bottom;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -138,14 +136,15 @@ body {
     padding: 20px;
 }
 
-/* Style dla urządzeń mobilnych */
+/* Media queries dla responsywności */
 @media (max-width: 768px) {
     .box-container {
         flex-direction: column;
-        height: 700px;
+        height: auto;
     }
+
     .box {
-        height: 400px;
+        height: 300px; /* Dopasowana wysokość na telefonach */
     }
 
     .header-title {
