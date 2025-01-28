@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .main-header {
@@ -31,8 +32,9 @@ body {
     height: auto;
     margin-right: 10px;
 }
+
 .main-footer {
-    text-align: center; /* Wyśrodkowanie tekstu */
+    text-align: center;
     padding: 10px;
     background-color: #000;
     border-top: 2px solid #333;
@@ -40,11 +42,12 @@ body {
 }
 
 .spacer {
-    text-align: center; /* Wyśrodkowanie tekstu w sekcji */
+    text-align: center;
     padding: 40px 0;
     color: #aaa;
     font-size: 18px;
 }
+
 .header-title {
     font-size: 32px;
     color: white;
@@ -53,10 +56,11 @@ body {
 }
 
 .header-underline {
-    width: 60px;
-    height: 2px;
-    background-color: white;
+    width: 80px; /* Szerokość linii */
+    height: 2px; /* Grubość linii */
+    background-color: white; /* Kolor linii */
     border: none;
+    margin: 5px auto 0; /* Odstęp od napisu */
 }
 
 .content {
@@ -78,18 +82,22 @@ body {
     justify-content: space-around;
     align-items: stretch;
     gap: 20px;
-    height: 700px;
+    height: 800px; /* Zwiększona wysokość kontenera */
+    perspective: 1000px;
 }
 
 .box {
-    flex: 1;
+    flex: 1 1 30%; /* Każdy box zajmuje równą szerokość */
     position: relative;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 700px;
+    height: 700px; /* Dopasowanie do wysokości kontenera */
+    width:550px;
+    transform-origin: center bottom;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .box img {
@@ -100,6 +108,15 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+.box:hover {
+    transform: rotateX(-10deg);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.box-container a {
+    text-decoration: none !important;
 }
 
 .overlay {
@@ -117,44 +134,29 @@ body {
     z-index: 3;
     color: white;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     padding: 20px;
 }
 
 /* Style dla urządzeń mobilnych */
 @media (max-width: 768px) {
-    .main-footer {
-        text-align: center; /* Wyśrodkowanie tekstu */
-        padding: 10px;
-        background-color: #000;
-        border-top: 2px solid #333;
-        margin-top: 20px;
-    }
-    
-    .spacer {
-        text-align: center; /* Wyśrodkowanie tekstu w sekcji */
-        padding: 40px 0;
-        color: #aaa;
-        font-size: 18px;
-    }
     .box-container {
         flex-direction: column;
-        height: auto; /* Automatyczna wysokość dla zawartości */
+        height: 700px;
     }
-
     .box {
-        height: 400px; /* Zmniejszona wysokość boxów */
+        height: 400px;
     }
 
     .header-title {
-        font-size: 24px; /* Mniejszy rozmiar tytułu */
+        font-size: 24px;
     }
 
     .logo img {
-        width: 100px; /* Zmniejszony rozmiar logo */
+        width: 100px;
     }
 
     .box-text {
-        font-size: 16px; /* Mniejszy tekst dla lepszej czytelności */
+        font-size: 16px;
     }
 }

@@ -1,16 +1,12 @@
-// Dodanie prostej animacji dla kart po załadowaniu strony
+function showLoadingAnimation(event) {
+    event.preventDefault(); // Zatrzymanie domyślnego działania linku
+    const href = event.currentTarget.getAttribute('href');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
+    // Dodaj efekt zanikania przed przejściem
+    document.body.style.animation = "fadeOut 0.5s ease-in-out";
 
-    cards.forEach((card, index) => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(20px)';
-
-        setTimeout(() => {
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            card.style.opacity = 1;
-            card.style.transform = 'translateY(0)';
-        }, index * 200); // Każda karta pojawia się z opóźnieniem
-    });
-});
+    // Po zakończeniu animacji przenieś na nową stronę
+    setTimeout(() => {
+        window.location.href = href;
+    }, 500);
+}
