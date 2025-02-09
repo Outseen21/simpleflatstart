@@ -1,3 +1,4 @@
+/* Styl globalny */
 body {
     margin: 0;
     padding: 0;
@@ -7,9 +8,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    animation: fadeIn 1s ease-in-out;
 }
 
+/* Header - teraz PRZEWIJA SIĘ RAZEM ZE STRONĄ */
 .main-header {
     display: flex;
     flex-direction: column;
@@ -17,8 +18,11 @@ body {
     padding: 20px;
     background-color: #000;
     border-bottom: 2px solid #333;
+    opacity: 1; /* Zawsze widoczny */
+    transform: none; /* Brak animacji */
 }
 
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
@@ -33,21 +37,7 @@ body {
     margin-right: 10px;
 }
 
-.main-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #000;
-    border-top: 2px solid #333;
-    margin-top: 20px;
-}
-
-.spacer {
-    text-align: center;
-    padding: 40px 0;
-    color: #aaa;
-    font-size: 18px;
-}
-
+/* Nagłówek - tekst */
 .header-title {
     font-size: 32px;
     color: white;
@@ -63,6 +53,34 @@ body {
     margin: 5px auto 0;
 }
 
+/* Animacja dla reszty strony */
+.fade-in {
+    visibility: hidden; /* Ukrycie elementu przed animacją */
+    opacity: 0;
+    animation: fadeIn 0.7s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: visible;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animacja zanikania */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Główna zawartość */
 .content {
     flex: 1;
     display: flex;
@@ -70,32 +88,38 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: relative;
 }
 
-.intro {
-    width: 100%;
-    margin-top: 40px;
+/* Stopka */
+.main-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    border-top: 2px solid #333;
+    margin-top: 20px;
 }
 
+/* Boxy */
 .box-container {
     display: flex;
     justify-content: space-around;
     align-items: stretch;
     gap: 20px;
-    height: 800px; /* Zwiększona wysokość kontenera */
+    height: 800px;
     perspective: 1000px;
 }
 
 .box {
-    flex: 1 1 30%; /* Każdy box zajmuje równą szerokość */
+    flex: 1 1 30%;
     position: relative;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 700px; /* Dopasowanie do wysokości kontenera */
-    width:550px;
+    height: 700px;
+    width: 550px;
     transform-origin: center bottom;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -110,6 +134,7 @@ body {
     z-index: 1;
 }
 
+/* Efekt hover */
 .box:hover {
     transform: rotateX(-10deg);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
@@ -119,53 +144,46 @@ body {
     text-decoration: none !important;
 }
 
-.overlay {
+/* Tekst w boxie */
+.box-text {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-}
-
-.box-text {
-    position: relative;
     z-index: 3;
     color: white;
     text-align: center;
     font-size: 20px;
-    padding: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Media queries dla responsywności */
-/* Media queries dla responsywności */
+/* Responsywność */
 @media (max-width: 768px) {
     .box-container {
-        flex-direction: column; /* Boxy ułożone pionowo */
-        height: auto; /* Automatyczna wysokość */
-        width: 100%; /* Dopasowanie do szerokości ekranu */
-        padding: 0; /* Usunięcie marginesów */
-        gap: 20px; /* Dodanie odstępów między boxami */
-        box-sizing: border-box; /* Uwzględnienie paddingu */
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 0;
+        gap: 20px;
     }
 
     .box {
-        height: 300px; /* Wysokość boxów na urządzeniach mobilnych */
-        flex: none; /* Usunięcie reguły flex */
-        width: 100%; /* Boxy zajmują pełną szerokość kontenera */
-        margin-bottom: 20px; /* Odstęp między boxami */
+        height: 300px;
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     .header-title {
-        font-size: 24px; /* Zmniejszenie rozmiaru tytułu */
+        font-size: 24px;
     }
 
     .logo img {
-        width: 100px; /* Zmniejszenie rozmiaru logo */
+        width: 100px;
     }
 
     .box-text {
-        font-size: 16px; /* Mniejszy rozmiar tekstu */
+        font-size: 16px;
     }
 }

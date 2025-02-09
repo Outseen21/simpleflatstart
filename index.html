@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="main-header">
+    <header class="main-header"> <!-- Header BEZ animacji -->
         <div class="logo">
             <img src="img/simpleflat.jpg" alt="Logo">
         </div>
@@ -15,13 +15,13 @@
         <hr class="header-underline">
     </header>
 
-    <main class="content">
+    <main class="content fade-in"> <!-- Main z animacją -->
         <section class="intro">
             <div class="box-container">
                 <!-- Pierwszy box - Simple Flat -->
-                <a href="https://simpleflat.pl" class="box-link">
+                <a href="https://simpleflat.pl" class="box-link" onclick="showLoadingAnimation(event)">
                     <div class="box">
-                        <img src="img/interior-sample.jpg" alt="Simple Flat">
+                        <img src="img/SimpleFlat.gif" alt="Simple Flat">
                         <div class="box-text">
                             <h3>Simple Flat</h3>
                         </div>
@@ -29,9 +29,9 @@
                 </a>
 
                 <!-- Drugi box - Simple Manager -->
-                <a href="https://simplemanager.pl" class="box-link">
+                <a href="https://simplemanager.pl" class="box-link" onclick="showLoadingAnimation(event)">
                     <div class="box">
-                        <img src="img/architecture-sample.jpg" alt="Simple Manager">
+                        <img src="img/SimpleManager.gif" alt="Simple Manager">
                         <div class="box-text">
                             <h3>Simple Manager</h3>
                             <p>Strona w trakcie tworzenia.</p>
@@ -40,9 +40,9 @@
                 </a>
 
                 <!-- Trzeci box - Simple Tax -->
-                <a href="https://simpletax.pl" class="box-link">
+                <a href="https://simpletax.pl" class="box-link" onclick="showLoadingAnimation(event)">
                     <div class="box">
-                        <img src="img/tax-sample.jpg" alt="Simple Tax">
+                        <img src="img/SimpleTax.gif" alt="Simple Tax">
                         <div class="box-text">
                             <h3>Simple Tax</h3>
                             <p>Projekt w trakcie tworzenia.</p>
@@ -53,8 +53,10 @@
         </section>
     </main>
 
-    <footer class="main-footer">
+    <footer class="main-footer fade-in">
         <p>&copy; 2025 Simple Company. Wszelkie prawa zastrzeżone.</p>
     </footer>
+
+    <script src="animated.js"></script>
 </body>
 </html>
