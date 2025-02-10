@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Animacja uruchamia się, gdy strona jest w pełni załadowana
     const fadeElements = document.querySelectorAll(".fade-in");
     fadeElements.forEach((element) => {
-        element.style.visibility = "visible"; // Pokazuje element przed animacją
+        element.style.visibility = "visible"; // Upewnij się, że elementy są widoczne
         element.classList.add("visible");
     });
 });
+
 
 function showLoadingAnimation(event) {
     event.preventDefault();
