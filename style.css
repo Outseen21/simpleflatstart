@@ -171,8 +171,8 @@ body {
         display: flex !important; /* Wymuszenie widoczności */
         align-items: center;
         justify-content: center;
-        height: 250px !important;
-        min-height: 250px !important;
+        height: 300px !important;
+        min-height: 300px !important;
         width: 100%;
         border: 2px  !important; /* Obramowanie do testowania */
         position: relative !important;
