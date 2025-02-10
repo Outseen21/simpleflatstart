@@ -174,7 +174,7 @@ body {
         height: 250px !important;
         min-height: 250px !important;
         width: 100%;
-        border: 2px solid red !important; /* Obramowanie do testowania */
+        border: 2px  !important; /* Obramowanie do testowania */
         position: relative !important;
     }
 
