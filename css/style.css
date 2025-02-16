@@ -1089,9 +1089,13 @@ img {
     margin: 0 auto;
 }
 .team {
-    padding: 60px 0;
     text-align: center;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
   
   .team h2 {
     font-size: 36px;
@@ -1105,19 +1109,38 @@ img {
     margin-bottom: 40px;
   }
   
-  .member {
+.member-area {
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie */
+    align-items: center;
+    margin-left: 145px;
+    flex-direction: column; /* Układ pionowy */
+    width: 100%;
+}
+.member-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrowanie */
+    width: 100%;
+}
+
+.member-area {
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie */
+    align-items: center;
+    width: 100%;
+}
+
+.member {
+    display: flex;
+    flex-direction: column; /* Układ pionowy */
+    align-items: center; /* Wyśrodkowanie */
     text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .member-avatar {
-    margin: 0 auto 20px;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+    max-width: 600px; /* Ograniczenie szerokości */
+    margin: 0 auto; /* Pełne wyśrodkowanie */
+    transform: translateX(100px); /* Przesunięcie w prawo */
+}
   
   .member-avatar img {
     width: 100%;
@@ -1183,12 +1206,17 @@ border-radius: 0%;
 padding-bottom: 100px;
 }
 .author-avatar {
-float: left;
-max-height: 200px;
-max-width: 200px;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px; /* Odsunięcie zdjęcia od tekstu */
 }
+
+
 .member-details {
-padding-left: 230px;
+    max-width: 500px; /* Ograniczenie szerokości tekstu */
+    text-align: center; /* Wyśrodkowanie tekstu */
 }
 .member-top {
 position: relative;
