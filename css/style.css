@@ -95,7 +95,7 @@ p {
 ---------------------------------*/
 
 #header_wrapper {
-    background: #b4b3b1;
+    background: #2d343f;
     padding: 20px 0px;
 }
 #hero_section .btn-primary {
@@ -194,7 +194,7 @@ p {
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     color: #fff;
-	background-color: #b4b3b1;
+	background-color: #2d343f;
 	border-radius:5%;
 }
 
@@ -275,6 +275,30 @@ p {
     border-radius: 10px;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+}
+#aboutUs img {
+    display: block; /* Zapewnienie wyświetlania */
+    max-width: 100%; /* Dopasowanie do szerokości kontenera */
+    height: auto; /* Zachowanie proporcji */
+    margin-top: 20px; /* Dodanie odstępu */
+    border-radius: 10px; /* Opcjonalnie: zaokrąglenie rogów */
+}
+#aboutUs .row {
+    display: flex;
+    flex-direction: row; /* Utrzymanie obok siebie tekstu i obrazka */
+    align-items: center; /* Wyśrodkowanie w pionie */
+    justify-content: center; /* Wyśrodkowanie w poziomie */
+    gap: 20px; /* Dodanie odstępu między elementami */
+}
+
+#aboutUs .col-md-6 {
+    flex: 1; /* Równy podział przestrzeni */
+}
+
+#aboutUs img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Opcjonalnie zaokrąglenie */
 }
 #aboutUs h1 {
     font-size: 36px;
@@ -407,8 +431,30 @@ a.read_more2:hover {
 }
 
 @media (max-width: 768px) {
-    .oferta-item {
-        flex: 1 1 calc(50% - 10px); /* 2 kolumny w wierszu dla urządzeń mobilnych */
+    #aboutUs .row {
+        flex-direction: column; /* Ustawienie jeden pod drugim */
+        text-align: center; /* Wycentrowanie tekstu */
+    }
+
+
+    #aboutUs .col-md-6 {
+        width: 100%; /* Rozciągnięcie na całą szerokość */
+    }
+
+    #aboutUs img {
+        display: block; /* Zapewnienie wyświetlania */
+        max-width: 100%; /* Dopasowanie do szerokości kontenera */
+        height: auto; /* Zachowanie proporcji */
+        margin-top: 20px; /* Dodanie odstępu */
+        border-radius: 10px; /* Opcjonalnie: zaokrąglenie rogów */
+    }
+
+    #aboutUs .text-container {
+        order: 2; /* Przesunięcie tekstu na górę */
+    }
+
+    #aboutUs .col-md-6:last-child {
+        order: 1; /* Przesunięcie obrazka na dół */
     }
 }
 
