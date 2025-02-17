@@ -2154,6 +2154,11 @@ div.mc-image {
 .bannerImg{
 display:none;
 }
+.container, .row {
+    padding-right: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
 p{
 font-size:14px;
 }
@@ -2424,4 +2429,44 @@ padding-top: 18px;
 .box-text p {
     font-size: 16px;
     line-height: 1.5;
+}
+@media (max-width: 991px) {
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Usunięcie poziomego scrolla */
+    }
+
+    .container, .row, section, header, footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Rozciągnięcie nawigacji */
+    .navbar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Pełna szerokość dla obrazków */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Pełna szerokość dla przycisków */
+    .btn {
+        width: 90%; 
+        display: block;
+        margin: 10px auto; /* Centrowanie */
+    }
+
+    /* Poprawka dla tekstów */
+    .text-container {
+        text-align: center;
+        padding: 0 15px;
+    }
 }
