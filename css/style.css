@@ -436,7 +436,21 @@ a.read_more2:hover {
         text-align: center; /* Wycentrowanie tekstu */
     }
 
-
+    .member-area {
+        width: 100%;
+        padding: 0 20px; /* Daje marginesy po bokach */
+    }
+    
+    .author-avatar img {
+        max-width: 90%; /* Zapewnia responsywność */
+        height: auto;
+        margin: 0 auto;
+    }
+    
+    .member-details {
+        text-align: center;
+        margin-left: 0px;
+    }
     #aboutUs .col-md-6 {
         width: 100%; /* Rozciągnięcie na całą szerokość */
     }
@@ -2172,7 +2186,14 @@ padding: 38px 0;
 #team .member {
     text-align: center; /
 }
-
+.member-area {
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie */
+    align-items: center;
+    margin-left: 0px;
+    flex-direction: column; /* Układ pionowy */
+    width: 100%;
+}
 #team .author-avatar {
     float: none; /* Usunięcie wyrównania do lewej */
     margin: 0 auto 20px; /* Wyśrodkowanie i odstęp poniżej */
