@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
-<title>BenBud</title>
+<title>Simple Manager</title>
 <link rel="icon" href="favicon.jpg" type="image/png">
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css"> 
@@ -21,7 +21,7 @@
 <header id="header_wrapper">
   <div class="container">
     <div class="header_box">
-      <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"></a></div>
+      <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
       <nav class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
           <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> 
@@ -245,34 +245,40 @@
   </div>
 </section>
 
-
-<footer class="footer_wrapper" id="contact">
+<footer class="footer_wrapper wow fadeIn" id="contact" data-wow-delay="0.3s">
   <div class="container">
-    <section class="page_section contact" id="contact">
+    <section class="page_section contact text-center">
       <div class="contact_section">
-        <h2>Kontakt</h2>
-        <div class="form">
-          <form name="sentMessage" id="contactForm" novalidate>
-            <div class="control-group">
-              <div class="controls">
-                <input type="text" class="form-control input-text" placeholder="Imię i nazwisko" id="name" required>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="controls">
-                <input type="email" class="form-control input-text" placeholder="Email" id="email" required>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="controls">
-                <textarea rows="10" cols="100" class="form-control input-text" placeholder="Wiadomość" id="message" required></textarea>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary input-btn pull-right">Wyślij</button>
-          </form>
+        <h2 class="contact-title wow fadeInDown" data-wow-delay="0.5s">Kontakt</h2>
+        <p class="contact-text">Masz pytania? Skontaktuj się z nami za pomocą ulubionego kanału!</p>
+
+        <div class="contact-links">
+          <a href="https://www.messenger.com/t/105854029147528" target="_blank" class="btn contact-btn wow fadeInUp" data-wow-delay="0.6s">
+            <img src="img/messenger.png" alt="Messenger">
+            Messenger
+          </a>
+          <a href="https://www.facebook.com/simpleflatcompany?locale=pl_PL" target="_blank" class="btn contact-btn wow fadeInUp" data-wow-delay="0.7s">
+            <img src="img/facebook.png" alt="Facebook">
+            Facebook
+          </a>
+          <a href="https://www.instagram.com/_simple_flat_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn contact-btn wow fadeInUp" data-wow-delay="0.8s">
+            <img src="img/instagram.png" alt="Instagram">
+            Instagram
+          </a>
+          <a href="tel:+48782646420" class="btn contact-btn wow fadeInUp" data-wow-delay="0.9s">
+            <i class="fa fa-phone"></i> +48 782 646 420
+          </a>
+          <a href="mailto:kontakt.simpleflat@gmail.com" class="btn contact-btn wow fadeInUp" data-wow-delay="1s">
+            <i class="fa fa-envelope"></i> Email
+          </a>
         </div>
       </div>
     </section>
+
+    <!-- Copyright -->
+    <div class="copyright text-center">
+      <p>&copy; <span id="year"></span> Unikalne. Wszelkie prawa zastrzeżone.</p>
+    </div>
   </div>
 </footer>
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
